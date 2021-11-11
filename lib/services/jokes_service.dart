@@ -18,9 +18,11 @@ class JokesService extends ChangeNotifier {
     return api.loadJokes().then((response) {
       print('*******************RESPONSE***********************');
       print(response.data);
+      return response;
     }).catchError((error) {
       print('****************************ERROR******************');
       print(error);
+      return error;
     });
   }
 }

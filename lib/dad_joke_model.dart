@@ -14,8 +14,8 @@ class DadJoke {
     this.joke,
   });
 
-  String id;
-  String joke;
+  String? id;
+  String? joke;
 
   factory DadJoke.fromMap(Map<String, dynamic> json) => DadJoke(
         id: json["id"] == null ? null : json["id"],

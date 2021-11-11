@@ -1,6 +1,8 @@
 import 'dart:async';
 
+import 'package:dad_jokes/services/jokes_service.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -15,7 +17,9 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   navigateToHomePage() async {
-    await Future.delayed(const Duration(seconds: 3), () => print("1232"));
+    await jokesService.loadJokes().then((response) async {
+      await Future.delayed(const Duration(seconds: 3), () => print("1232"));
+    }).catchError((error) {});
   }
 
   @override
@@ -26,9 +30,24 @@ class _SplashScreenState extends State<SplashScreen> {
         height: double.infinity,
         width: double.infinity,
         child: Center(
-          child: Text(
-            "Dad jokes",
-            style: TextStyle(color: Colors.white),
+          child: Column(
+            children: [
+              Text(
+                "Dad jokes",
+                style: TextStyle(color: Colors.white),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              StreamBuilder<Object>(
+                  stream: null,
+                  builder: (context, snapshot) {
+                    return SpinKitThreeInOut(
+                      color: Colors.white,
+                      size: 50,
+                    );
+                  })
+            ],
           ),
         ),
       ),
