@@ -5,7 +5,7 @@ class DioApi {
 
   DioApi() {
     dio = Dio();
-    dio.interceptors.add(InterceptorsWrapper(onRequest: _requestIntercept));
+    //dio.interceptors.add(InterceptorsWrapper(onRequest: _requestIntercept));
   }
 
   _requestIntercept(
