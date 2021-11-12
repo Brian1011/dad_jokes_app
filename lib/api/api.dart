@@ -4,7 +4,8 @@ import 'package:dio/dio.dart';
 class Api extends DioApi {
   Future loadJokes() async {
     return dio.get("https://icanhazdadjoke.com/search",
-        options: Options(headers: {"Accept": "application/json"}));
+        options: Options(headers: {"Accept": "application/json"}),
+        queryParameters: {"limit": 30, "term": ""});
   }
 }
 

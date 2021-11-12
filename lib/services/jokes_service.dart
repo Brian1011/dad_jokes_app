@@ -16,8 +16,10 @@ class JokesService extends ChangeNotifier {
   Future loadJokes() async {
     loadingJokes = true;
     return api.loadJokes().then((response) {
-      print('*******************RESPONSE***********************');
-      print(response.data);
+      dadJokes = [];
+      List result = response.data["results"];
+      dadJokes.addAll(result.map((e) => DadJoke.fromMap(e)).toList());
+      print(dadJokes.length);
       return response;
     }).catchError((error) {
       print('****************************ERROR******************');
