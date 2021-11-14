@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
               offset: Offset(0, 17),
               blurRadius: 23.0,
               spreadRadius: -13.0,
-              color: Colors.black54,
+              color: Colors.white,
             )
           ],
         ),
