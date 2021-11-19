@@ -1,5 +1,5 @@
 import 'package:dad_jokes/api/api.dart';
-import 'package:dad_jokes/dad_joke_model.dart';
+import 'package:dad_jokes/data/models/dad_joke_model.dart';
 import 'package:flutter/cupertino.dart';
 
 class JokesService extends ChangeNotifier {
