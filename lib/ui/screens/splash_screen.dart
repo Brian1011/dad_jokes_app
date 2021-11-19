@@ -1,4 +1,5 @@
 import 'package:another_flushbar/flushbar.dart';
+import 'package:dad_jokes/data/database.dart';
 import 'package:dad_jokes/services/jokes_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,11 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     navigateToHomePage();
+    runSetup();
+  }
+
+  runSetup() async {
+    await db.init();
   }
 
   navigateToHomePage() async {
